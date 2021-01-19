@@ -3,7 +3,7 @@ import {
     CardTitle, Button
   } from 'reactstrap';
 
-  function Example (props) {
+  function Products (props) {
     return (
       <div className='col-md-4'>
         <Card className='mb-3'>
@@ -22,4 +22,4 @@ import {
     );
   };
   
-  export default Example;
+  export default Products;

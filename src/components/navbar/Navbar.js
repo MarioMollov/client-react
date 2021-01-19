@@ -11,41 +11,41 @@ import {
 import {ReactComponent as Logo} from "../../logo.svg";
 import { Link } from 'react-router-dom';
 
-const navLinkList = [
-  {
-    to: '/',
-    page: 'Home',
-    main: () => <NavLink tag={Link} href='/'>
-      Home
-    </NavLink>
-  },
-  {
-    to: '/products',
-    page: 'Products',
-    main: () => <NavLink tag={Link} to={this.to}>
-      {this.page}
-    </NavLink>
-  },
-  {
-    to: '/contact',
-    page: 'Contact',
-    main: () => <NavLink tag={Link} to={this.to}>
-      {this.page}
-    </NavLink>
-  },
-]
+// const navLinkList = [
+//   {
+//     to: '/',
+//     page: 'Home',
+//     main: () => <NavLink tag={Link} href='/'>
+//       Home
+//     </NavLink>
+//   },
+//   {
+//     to: '/products',
+//     page: 'Products',
+//     main: () => <NavLink tag={Link} to={this.to}>
+//       {this.page}
+//     </NavLink>
+//   },
+//   {
+//     to: '/contact',
+//     page: 'Contact',
+//     main: () => <NavLink tag={Link} to={this.to}>
+//       {this.page}
+//     </NavLink>
+//   },
+// ]
 
-const getLinks = () => {
-  const links = navLinkList.map((link, index) => {
-    return <NavItem 
-      key ={index}
-    >
-      {link.main}
-    </NavItem>
-  })
-  console.log(links);
-  return links
-} 
+// const getLinks = () => {
+//   const links = navLinkList.map((link, index) => {
+//     return <NavItem 
+//       key ={index}
+//     >
+//       {link.main}
+//     </NavItem>
+//   })
+//   console.log(links);
+//   return links
+// } 
 
 function Navabar () {
   const [isOpen, setIsOpen] = useState(false);
@@ -63,15 +63,18 @@ function Navabar () {
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
-              {getLinks()}
+              {/* {getLinks()} */}
               <NavItem>
-                <NavLink tag={Link} to="/">Home</NavLink>
+                <NavLink tag={Link} to="/">Movies</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink tag={Link} to="/products">Products</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink tag={Link} to="/contact">Contact</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink tag={Link} to="/example">Example</NavLink>
               </NavItem>
             </Nav>
           </Collapse>

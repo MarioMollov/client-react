@@ -1,6 +1,7 @@
 import Home from './pages/Home';
 import Products from './pages/Products';
 import Contact from './pages/Contact';
+import Movies from './pages/Movies';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import './App.css';
@@ -11,7 +12,7 @@ const routes = [
     path: '/',
     exact: true,
     main: () => <Layout>
-      <Home />
+      <Movies />
     </Layout>
   },
   {
@@ -24,6 +25,12 @@ const routes = [
     path: '/contact',
     main: () => <Layout>
       <Contact />
+    </Layout>
+  },
+  {
+    path: '/example',
+    main: () => <Layout>
+      <Home />
     </Layout>
   },
 ]
