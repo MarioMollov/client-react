@@ -4,14 +4,17 @@ import Movie from "../components/movie/Movie";
 
 const Movies = (props) => {   
     
-    const [movie, setMovie] = useState({});
+    const [movies, setMovies] = useState([]);
 
     const loadMovies = () => {
         network.get(
-            'movie/76341',
-            {},
+            'discover/movie',
+            {
+                year: 2020,
+                page: 1,
+            },
             (response) => {
-                setMovie(response);
+                setMovies(response.results);
             },
             (error) => {
                 console.log(error);
@@ -23,15 +26,22 @@ const Movies = (props) => {
         loadMovies();
     },[]);
 
-    return <>
-    <div className='container'>
-        <div className='row'>
-            <Movie  
+    const getMovies = () => {
+        const movieList = movies.map(movie => {
+            return <Movie  
+                key={movie.id}
                 title={movie.title}
                 overview={movie.overview}
                 poster_path={movie.poster_path}
-
             />
+        })
+        return movieList;
+    }
+
+    return <>
+    <div className='container'>
+        <div className='row'>
+            {getMovies()}
         </div>
     </div>
     </>

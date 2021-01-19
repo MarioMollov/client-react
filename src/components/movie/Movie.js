@@ -21,12 +21,12 @@ import {
     }
 
     return (
-      <div className='col-md-4'>
+      <div className='col-md-3'>
         <Card className='mb-3'>
           {getMovieImage()}
           <CardBody>
-            <CardTitle tag="h5">{props.title}</CardTitle>
-            <CardText>{props.overview}</CardText>
+            <CardTitle className='text-truncate' tag="h5">{props.title}</CardTitle>
+            <CardText className='movie-description'>{props.overview}</CardText>
             <Button>Movie details</Button>
           </CardBody>
         </Card>
