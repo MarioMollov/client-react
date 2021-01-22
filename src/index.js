@@ -1,12 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from "react-redux";
+import rootReducer from "./redux/reducers";
+import thunk from 'redux-thunk';
+import { createStore, applyMiddleware } from "redux";
+
 import './scss/styles.scss'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const store = createStore(rootReducer, applyMiddleware(thunk));
+
 ReactDOM.render(
   <React.Fragment>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.Fragment>,
   document.getElementById('root')
 );
